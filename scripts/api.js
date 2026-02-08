@@ -1,8 +1,8 @@
 // scripts/api.js
-const BASE = 'https://yomomma-api.herokuapp.com'; // verify this host if you see network errors
+const BASE = '/.netlify/functions/jokes-proxy';
 
 export async function getRandomJokes(count = 1) {
-  const url = `${BASE}/jokes/random${count ? '?count=' + encodeURIComponent(count) : ''}`;
+  const url = `${BASE}${count ? '?count=' + encodeURIComponent(count) : ''}`;
   const res = await fetch(url);
   if (!res.ok) {
     throw new Error(`HTTP ${res.status}`);
