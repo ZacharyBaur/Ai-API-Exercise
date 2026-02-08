@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yo Momma Jokes</title>
+  <!-- UnoCSS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/unocss@0.57.0/dist/unocss.min.js" defer></script>
+</head>
+<body class="bg-slate-50 min-h-screen p-6">
+  <header class="max-w-4xl mx-auto mb-6">
+    <nav class="flex items-center justify-between">
+      <h1 class="text-2xl font-bold">Yo Momma Jokes</h1>
+      <a href="writeup.html" class="text-sm text-sky-600 hover:underline">AI Write-up</a>
+    </nav>
+  </header>
+
+  <main class="max-w-4xl mx-auto grid gap-6">
+    <section id="random-joke" class="bg-white p-4 rounded shadow">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-lg font-semibold">Random Joke</h2>
+        <button id="btn-random" class="px-3 py-1 bg-sky-600 text-white rounded">Get Random</button>
+      </div>
+      <div id="random-joke-content" class="text-gray-800"></div>
+    </section>
+
+    <section id="multiple-jokes" class="bg-white p-4 rounded shadow">
+      <div class="flex items-center justify-between mb-3">
+        <h2 class="text-lg font-semibold">Multiple Jokes</h2>
+        <div>
+          <label for="count" class="mr-2 text-sm">Count</label>
+          <input id="count" type="number" min="1" max="10" value="3" class="w-16 px-2 py-1 border rounded" />
+          <button id="btn-multiple" class="ml-2 px-3 py-1 bg-emerald-600 text-white rounded">Fetch</button>
+        </div>
+      </div>
+      <ul id="jokes-list" class="space-y-2"></ul>
+    </section>
+  </main>
+
+  <script type="module" src="scripts/api.js"></script>
+  <script type="module" src="scripts/ui.js"></script>
+</body>
+</html>
